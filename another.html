@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+       *
+       {
+        margin: 0;
+        padding: 1px;
+        box-sizing:border-box
+       }
+       body
+       {
+         background: rgba(0,0,0,0.3)
+       }
+       .container
+       {
+        
+        display: grid;
+        height: 100vh;
+        grid-template:repeat(12,1fr) / repeat(12,1fr) ;
+        gap: 10px;
+        grid-template-areas:
+        '. z z z z z z z z z z . '
+        '. z z z z z z z z z z . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. . . . b b b b . . . . '
+        '. . . . b b b b . . . . '
+        ;
+        
+       }
+       input
+       {
+       width: 15x;
+       padding: 10px;
+       font-size: 16px;
+       background: transparent;
+       border-radius: 10p;
+       border: 2px solid black;
+       }
+       input::placeholder
+       {
+         color:greenyellow
+       }
+       [class ^='box-']
+       {
+         margin: 10px;
+         border-radius: 10px;
+       }
+.box-1
+{
+    display: flex;
+    grid-area:z;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    border-radius: 10px;
+    background: aqua;
+    border: 1px solid green;
+    
+}
+.box-2
+{
+   grid-area: t;
+   border: 1px solid green;
+}
+
+ .box-3
+ {
+   grid-area: y;
+   border: 1px solid green;
+ }
+       button
+{
+   grid-area: b;
+   margin-bottom: 20px;
+}
+table, th, td
+{
+   border: 1px solid red;
+   border-radius: 10px;
+}
+
+tr{
+   display: flex;
+   margin: 10px;
+   flex-grow: 1;
+   border-radius: 10px;
+}
+th
+{
+   display: flex;
+   padding: 5px;
+   justify-content: center;
+   border: 1px solid green;
+   flex-basis: 100%;
+   font-size: 18px;
+}
+td{
+   display: flex;
+   flex-grow: 1;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   margin: 5px;
+   font-size: 18px;
+   
+}
+table
+{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   background:aqua;
+   border: 1px solid blue;
+}
+button
+{
+   background-color: aqua;
+   border-radius: 10px;
+   font-weight: bold;
+   cursor: pointer;
+   font-size: 22px;
+}
+@media  screen and (max-width:720px){
+   .container
+   {
+      display:flex;
+      flex-direction: column;
+      
+   }
+   .box-1
+   {
+      padding: 10px;
+      column-gap: 20px;
+      margin: 4px;
+   }
+
+   td 
+   {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2px;
+      height: 50px;
+      width: 50px;
+   }
+   tr {
+      margin: 4px;
+   }
+   
+   input[type ='number']
+   {
+      width: 90px;
+   }
+   
+   button{
+      display: flex;
+      align-self: center;
+      align-items: center;
+      width: 200px;
+      justify-content: center;
+      flex-grow: 1;
+   }
+}
+
+@media  screen and (orientation:portrait)
+{
+   
+}
+
+   </style>
+
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <div class="box-1">
+               
+                <input type="text" placeholder='enter verse / number'id="verse">
+                <input type="number"placeholder='multiply' value="1"id='multy'>
+         
+   </div>
+            <div class="box-2">
+            <table>
+
+             <tr>
+                <th>Aufaq values</th>
+         </tr>
+
+             <tr class="td">
+                <td class="num">2</td>
+                <td class="num">4</td>
+                <td class="num">6</td>
+      </tr>
+
+             <tr class="td">
+                <td class="num">5</td>
+                <td> wishes</td>
+                <td class="num">7</td>
+   </tr>
+
+             <tr class="td">
+                <td class="num">1</td>
+                <td class="num">3</td>
+                <td class="num">8</td> 
+</tr>
+
+          </table>
+            </div>
+
+            <div class="box-3">
+         <table>
+
+                <tr>
+                   <th>Number values</th>
+            </tr>
+
+                <tr class="td">
+                  <td class="item">2</td>
+                   <td class="item">4</td>
+                   <td class="item">6</td>
+         </tr>
+
+                <tr class="td">
+                   <td class="item">5</td>
+                   <td> wishes</td>
+                   <td class="item">7</td>
+      </tr>
+
+                <tr class="td">
+                   <td class="item">1</td>
+                   <td class="item">3</td>
+                   <td class="item">8</td>
+   </tr>
+
+               </table>
+            </div>
+            <button>Calculate</button>
+        </div>
+
+        <script>
+       
+      var input =document.querySelector('#verse')
+      var holder  =document.querySelectorAll('.item')
+      var holder_=document.querySelectorAll('.num')
+      var times =document.querySelector('#multy')
+      var alphabets =
+      {
+         A:1, B:2, C:3, D:4, E:5,
+         F:6, G:8, H:9, I:10,J:11,
+         K:12, L:13, M:14, N:15, O:16,
+         P:17, Q:18, R:19, S:20, T:21,
+         U:22, V :23, W:23, X:24, Y:25, 
+         Z:26
+      }
+      var some = [' .',' a',' b',' c',' d',' e',' f',' g',' h',' i']
+
+       function init()
+       {
+        let Input = input.value.toString().trim().split('')
+        let total = 0
+        
+         for(let i in Input)
+         {
+            total = total + alphabets[Input[i].toUpperCase()]
+         }
+         return total 
+      }
+
+     function Calculate(val)
+     {
+        var sum = 0
+        val = val * times.value
+        let c = val  % 12
+        const i = val - c
+
+        const [two,four,six,seven,five,three,eight,one] = 
+              [
+               (i/12*2),(i/12*4),(i/12*6+c),(i/12*7+c),
+               (i/12*5),(i/12*3),(i/12*8+c),(i/12*1)
+              ]
+
+         const data = [two,four,six,seven,five,three,eight,one]
+
+        for(let i in holder)
+      {
+         holder[i].innerHTML = data[i] 
+         
+      }
+      
+       (function Converter(data)
+   {
+         for(let i= 0; i<data.length; i++)
+      {
+
+          let result  = data[i].toString().trim().split('')
+          .map(i => some[i]).reduce((a,b) => a+b)
+
+         holder_[i].innerHTML = result
+
+      }
+   }(data))
+     
+   }
+     document.querySelector('button').onclick = ()=>
+     {     
+      let check =  input.value.toString().trim().split('').every(i => isNaN(i))
+           if(check)
+           {
+            Calculate(init())
+           }
+           else
+           {
+           Calculate(input.value)
+           } 
+     }        
+     
+   </script>
+    </body>
+
+</html>
