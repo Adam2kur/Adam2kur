@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            background: rgba(0,0,0,0.2);
+        }
+        .container
+        {
+            
+        display: grid;
+        height: calc(100vh - 20px);
+        grid-template:repeat(12,1fr) / repeat(12,1fr) ;
+        gap: 30px;
+        grid-template-areas:
+        '. z z z z z z z z z z r '
+        '. z z z z z z z z z z r '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. t t t t t y y y y y . '
+        '. . . . b b b b . . . . '
+        '. . . . b b b b . . . . '
+        ;
+        }
+        nav{
+            grid-area: r;
+            border: 1px solid red;
+            margin: 10px;
+        }
+        
+        .block-1
+        {  
+        display: flex;
+        grid-area:z;
+        justify-content: center;
+        align-items: center;
+        column-gap: 40px;
+        margin-top: 10px;
+        border-radius: 10px;
+        background: aqua;
+        border: 1px solid green;
+        }
+        input
+        {
+       
+        min-width: 140px;
+        min-height: 50px;
+        margin: 5px;
+        padding: 10px;
+        font-size: 18px;
+        background: transparent;
+        border-radius: 10px;
+        border: 2px solid black;     
+        }
+        .block-2
+        {   display: flex;
+            grid-area: t;
+            column-gap: 20px;
+        }
+        .block-3
+        {
+            grid-area: y;
+            display: flex;
+            column-gap: 20px;
+        }
+        button
+        {
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 18px;
+            background: aqua;
+            cursor: pointer;
+            
+        }
+        
+        [class ^="cols-"]
+        {   display:grid;
+            grid-template:repeat(10,1fr)/repeat(10,1fr);
+            grid-template-areas:
+            'h h h h h h h h h h'
+            's s s s s s s s s s'
+            's s s s s s s s s s'
+            's s s s s s s s s s'
+            'm m m m m m m m m m'
+            'm m m m m m m m m m'
+            'm m m m m m m m m m'
+            'l l l l l l l l l l'
+            'l l l l l l l l l l'
+            'l l l l l l l l l l';
+            border: 1px solid red;
+            background: aqua;
+            border-radius: 10px;
+            flex-grow: 1;
+        }
+        .disc
+        {
+            grid-area: h;
+            border: 1px solid green;
+            border-radius: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px;
+        }
+        [class ^="rows-"]
+        {
+         
+         display: flex;
+         margin: 10px;
+        }
+        [class ^="item"]
+        {
+            flex-grow: 1;
+            display: flex;
+            border: 1px solid green;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            margin: 5px;
+        }
+        .rows-1
+        {
+            grid-area: s;
+        }
+        .rows-2
+        {
+            grid-area:m ;
+        }
+        .rows-3
+        {
+            grid-area: l;
+        }
+        .rows-4
+        {
+        grid-area: s;
+        }
+        .rows-5
+        {
+            grid-area: m;
+        }
+        .rows-6
+        {
+            grid-area: l;
+        }
+        @media  screen and (max-width:800px)
+        {
+            .container
+        {
+        gap: 20px;
+        grid-template-areas:
+        '. z z z z z z z z z z . '
+        '. z z z z z z z z z z . '
+        '. t t t t t t t t t t . '
+        '. t t t t t t t t t t. '
+        '. t t t t t t t t t t. '
+        '. t t t t t t t t t t. '
+        '. y y y y y y y y y y . '
+        '. y y y y y y y y y y . '
+        '. y y y y y y y y y y . '
+        '. y y y y y y y y y y . '
+        '. . . b b b b b b . . . '
+        '. . . . . . . . . . . . '
+        ;
+        }
+        .item:hover
+        {
+            background:red ;
+            color: whitesmoke;
+        }
+        [class ^="item"]
+        {
+            padding: 15px;
+            flex-grow: 1;
+            margin: 5px;
+        }
+        .block-2
+        {
+            grid-area: t;
+        }
+        .block-3
+        {
+            grid-area: y;
+        }
+        input[type='number']
+        {
+            min-width: 70px;
+    
+        }
+        }
+     </style>
+     <title>Aufaq Calculator</title>
+    </head>
+    <body>
+        <div class="container">
+        <div class="block-1">
+            <input type="text" placeholder="Enter verse/num" id="verse">
+            <input type="number"placeholder="multiply" value="1" id="multy">
+            
+        </div>
+
+        <div class="block-2">
+            <div class="cols-1">
+                <div class="disc">Aufaq</div>
+                <div class="rows-1">
+                <div class="item num">2</div>
+                <div class="item num">4</div>
+                <div class="item num">6</div>
+                </div>
+                <div class="rows-2">
+                <div class="item num">5</div>
+                <div class="item">wishes</div>
+                <div class="item num">7</div>
+                </div>
+                <div class="rows-3">
+                <div class="item num">1</div>
+                <div class="item num">3</div>
+                <div class="item num">8</div>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="block-3">
+            <div class="cols-2">
+                <div class="disc">Number</div>
+                <div class="rows-4">
+                <div class="item nom">2</div>
+                <div class="item nom">4</div>
+                <div class="item nom">6</div>
+                </div>
+                <div class="rows-5">
+                <div class="item nom">5</div>
+                <div class="item">wishes</div>
+                <div class="item nom">7</div>
+                </div>
+                <div class="rows-6">
+                <div class="item nom">1</div>
+                <div class="item nom">3</div>
+                <div class="item nom">8</div>
+                </div>
+            
+            </div>
+        </div>
+        
+            <button>Calculate</button>
+        
+        </div>
+
+        
+        <script>
+       
+            var input =document.querySelector('#verse')
+            var holder  =document.querySelectorAll('.num')
+            var holder_=document.querySelectorAll('.nom')
+            var times =document.querySelector('#multy')
+            var alphabets =
+            {
+               A:1, B:2, C:3, D:4, E:5,
+               F:6, G:8, H:9, I:10,J:11,
+               K:12, L:13, M:14, N:15, O:16,
+               P:17, Q:18, R:19, S:20, T:21,
+               U:22, V :23, W:23, X:24, Y:25, 
+               Z:26
+            }
+            var some = [' .',' a',' b',' c',' d',' e',' f',' g',' h',' i']
+      
+             function init()
+             {
+              let Input = input.value.toString().trim().split('')
+              let total = 0
+              
+               for(let i in Input)
+               {
+                  total = total + alphabets[Input[i].toUpperCase()]
+               }
+               return total 
+            }
+      
+           function Calculate(val)
+           {
+              var sum = 0
+              val = val * times.value
+              let c = val  % 12
+              const i = val - c
+      
+              const [two,four,six,seven,five,three,eight,one] = 
+                    [
+                     (i/12*2),(i/12*4),(i/12*6+c),(i/12*7+c),
+                     (i/12*5),(i/12*3),(i/12*8+c),(i/12*1)
+                    ]
+      
+               const data = [two,four,six,seven,five,three,eight,one]
+      
+              for(let i in holder)
+            {
+               holder[i].innerHTML = data[i] 
+               
+            }
+            
+             (function Converter(data)
+         {
+               for(let i= 0; i<data.length; i++)
+            {
+      
+                let result  = data[i].toString().trim().split('')
+                .map(i => some[i]).reduce((a,b) => a+b)
+      
+               holder_[i].innerHTML = result
+      
+            }
+         }(data))
+           
+         }
+           document.querySelector('button').onclick = ()=>
+           {     
+            let check =  input.value.toString().trim().split('').every(i => isNaN(i))
+                 if(check)
+                 {
+                  Calculate(init())
+                 }
+                 else
+                 {
+                 Calculate(input.value)
+                 } 
+           }        
+           
+         </script>
+    </body>
+</html>
