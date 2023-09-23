@@ -2,7 +2,7 @@
 <html>
     <head>
         
-
+     <meta name ='viewport' content ='width = devive-width, initial-scale 1.0'>
      <style>
         *{
             margin: 1;
@@ -45,9 +45,8 @@
         {  
         display: flex;
         grid-area:z;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        column-gap: 40px;
         margin-top: 10px;
         border-radius: 10px;
         background: aqua;
@@ -56,8 +55,8 @@
         input
         {
        
-        min-width: 140px;
-        min-height: 50px;
+        width: 200px;
+        min-height: 60px;
         margin: 5px;
         padding: 10px;
         font-size: 18px;
@@ -167,16 +166,16 @@
         {
         gap: 20px;
         grid-template-areas:
-        '. z z z z z z z z z z . '
-        '. z z z z z z z z z z . '
-        '. t t t t t t t t t t . '
-        '. t t t t t t t t t t. '
-        '. t t t t t t t t t t. '
-        '. t t t t t t t t t t. '
-        '. y y y y y y y y y y . '
-        '. y y y y y y y y y y . '
-        '. y y y y y y y y y y . '
-        '. y y y y y y y y y y . '
+        'z z z z z z z z z z z z '
+        'z z z z z z z z z z z z '
+        't t t t t t t t t t t t '
+        't t t t t t t t t t t t '
+        't t t t t t t t t t t t '
+        't t t t t t t t t t t t '
+        'y y y y y y y y y y y y '
+        'y y y y y y y y y y y y '
+        'y y y y y y y y y y y y '
+        'y y y y y y y y y y y y '
         '. . . b b b b b b . . . '
         '. . . . . . . . . . . . '
         ;
@@ -202,7 +201,7 @@
         }
         input[type='number']
         {
-            min-width: 70px;
+            max-width: 70px;
     
         }
         }
