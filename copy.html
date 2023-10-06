@@ -179,7 +179,7 @@
    document.querySelector('.button').onclick = ()=>
    { 
     let valid= input.value.toString()
-        .toUpperCase().trim().split('')
+        .trim().toUpperCase().split('')
         .every(v => alphabets[v] !=undefined)
        
         if(valid)
