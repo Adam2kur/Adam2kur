@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/copy.css">
     <script src="node_modules/js/bootstrap.js"></script>
-    <title>Document</title>
+
+    <title>Aufaq calculator</title>
+
+    
 </head>
 <body>
-   
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container">
-            <a href="" class="navbar-brand">Frontend Bootcamp</a>
+            <a href="" class="navbar-brand">Aufaq calculator</a>
             <button class="navbar-toggler "type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navmenu">
@@ -21,23 +25,194 @@
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
-                    <a href="" class="nav-link">What you will learn</a>
+                    <a href="" class="nav-link">Abjad</a>
                 </li>
                 <li class="list-item">
-                <a href="" class="nav-link">Questions</a>
+                <a href="" class="nav-link">Abraj</a>
                 </li>
                 <li class="list-item">
-                    <a href="" class="nav-link">Instructors</a>
+                    <a href="" class="nav-link">huruf</a>
                 </li>
             </ul>
         </div>
-    
-        </div>
-      </nav>
-      <div class="container-fluid bg-primary mt-5 p-5">
+     </div>
+   </nav>
+
+   <div class="container-fluid bg-primary mt-5 p-3 pt-5">
+     <div class="container text-md-start  text-dark">
+     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Nisi voluptatum at assumenda asperiores, ratione officia,
+        neque architecto aspernatur nesciunt amet quis dicta repellat,
+        numquam quia! Cupiditate ea minus possimus accusantium!
+     </p>
+    </div>
+    </div>
+  
+    <div class="container-fluid bg-secondary  p-3">
         
-      </div>
-   </div> 
+        <div class="container cont ">
+        
+            <div class="block-1">
+                <input type="text" placeholder="Enter verse/num" id="verse">
+                <input type="number"placeholder="multiply" value="1" id="multy">
+                
+            </div>
+    
+            <div class="block-2">
+                <div class="cols-1">
+                    <div class="disc">Aufaq</div>
+                    <div class="rows-1">
+                    <div class="item num">2</div>
+                    <div class="item num">4</div>
+                    <div class="item num">6</div>
+                    </div>
+                    <div class="rows-2">
+                    <div class="item num">5</div>
+                    <div class="item">wishes</div>
+                    <div class="item num">7</div>
+                    </div>
+                    <div class="rows-3">
+                    <div class="item num">1</div>
+                    <div class="item num">3</div>
+                    <div class="item num">8</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+                <div class="block-3">
+                <div class="cols-2">
+                    <div class="disc">Number</div>
+                    <div class="rows-4">
+                    <div class="item nom">2</div>
+                    <div class="item nom">4</div>
+                    <div class="item nom">6</div>
+                    </div>
+                    <div class="rows-5">
+                    <div class="item nom">5</div>
+                    <div class="item">wishes</div>
+                    <div class="item nom">7</div>
+                    </div>
+                    <div class="rows-6">
+                    <div class="item nom">1</div>
+                    <div class="item nom">3</div>
+                    <div class="item nom">8</div>
+                    </div>
+                
+                </div>
+            </div>
+            
+                <button class="button">Calculate</button>
+
+            </div>
+        </div>
+    </div>
+   <div class="container-fluid bg-success "id='rg'>
+   ,nb
+   </div>
+
    
+   <script>
+       
+    var input =document.querySelector('#verse')
+    var holder  =document.querySelectorAll('.num')
+    var holder_=document.querySelectorAll('.nom')
+    var times =document.querySelector('#multy')
+    var alphabets =
+    {
+       A:1, B:2, C:3, D:4, E:5,
+       F:6, G:8, H:9, I:10,J:11,
+       K:12, L:13, M:14, N:15, O:16,
+       P:17, Q:18, R:19, S:20, T:21,
+       U:22, V :23, W:23, X:24, Y:25, 
+       Z:26
+    }
+    var some = [' .',' a',' b',' c',' d',' e',' f',' g',' h',' i']
+
+     function init()
+     {
+      let Input = input.value.toString().trim().split('')
+      let total = 0
+      
+       for(let i in Input)
+       {
+          total = total + alphabets[Input[i].toUpperCase()]
+       }
+       return total 
+    }
+
+   function Calculate(val)
+   {
+      var sum = 0
+      val = val * times.value
+      let c = val  % 12
+      const i = val - c
+
+      const [two,four,six,seven,five,three,eight,one] = 
+            [
+             (i/12*2),(i/12*4),(i/12*6+c),(i/12*7+c),
+             (i/12*5),(i/12*3),(i/12*8+c),(i/12*1)
+            ]
+
+       const data = [two,four,six,seven,five,three,eight,one]
+
+      for(let i in holder)
+    {
+       holder[i].innerHTML = data[i] 
+       
+    }
+    
+     (function Converter(data)
+ {
+       for(let i= 0; i<data.length; i++)
+    {
+
+        let result  = data[i].toString().trim().split('')
+        .map(i => some[i]).reduce((a,b) => a+b)
+
+       holder_[i].innerHTML = result
+
+    }
+ }(data))
+   
+ }
+   document.querySelector('.button').onclick = ()=>
+   { 
+    let valid= input.value.toString()
+        .toUpperCase().trim().split('')
+        .every(v => alphabets[v] !=undefined)
+       
+        if(valid)
+        {          
+         Calculate(init())
+        }
+            else
+            {
+
+        let check =  input.value.toString()
+         .trim().split('').every(i =>  !(isNaN(i)))
+
+          try
+          {
+          
+            if(check)
+            {
+                Calculate(input.value)
+            }
+            else throw new Error('Not a valid number')
+
+            }
+          catch(e)
+          {
+            alert(e)
+          }
+            
+            } 
+        } 
+     
+        
+    
+          
+ </script>
 </body>
 </html>

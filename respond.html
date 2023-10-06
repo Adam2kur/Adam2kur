@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/scss/bootstrap.scss">
+    <script src="node_modules/js/bootstrap.js"></script> 
+
      <meta name ='viewport' content ='width = devive-width, initial-scale 1.0'>
      <style>
+    
         *{
             margin: 1;
             padding: 0;
@@ -13,11 +19,10 @@
         {
             background: rgba(0,0,0,0.2);
         }
-        .container
+        .container1
         {
             
         display: grid;
-        height:calc(100vh - 10px);
         grid-template:repeat(12,1fr) / repeat(12,1fr) ;
         gap: 30px;
         grid-template-areas:
@@ -160,9 +165,9 @@
         {
             grid-area: l;
         }
-        @media  screen and (max-width:800px)
+        @media  screen and (max-width:765px)
         {
-            .container
+            .container1
         {
         gap: 20px;
         grid-template-areas:
@@ -208,7 +213,9 @@
      <title>Aufaq Calculator</title>
     </head>
     <body>
-        <div class="container">
+        
+      </nav>
+        <div class="container1">
         <div class="block-1">
             <input type="text" placeholder="Enter verse/num" id="verse">
             <input type="number"placeholder="multiply" value="1" id="multy">
@@ -262,7 +269,7 @@
             <button>Calculate</button>
         
         </div>
-
+        
         
         <script>
        
@@ -330,7 +337,7 @@
          }
            document.querySelector('button').onclick = ()=>
            {     
-            let check =  input.value.toString().trim().split('').every(i => isNaN(i))
+             let check =  input.value.toString().trim().split('').every(i => isNaN(i))
                  if(check)
                  {
                   Calculate(init())
