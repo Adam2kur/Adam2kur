@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/css/bootstrap.css">
-    <link rel="stylesheet" href="/node_modules/copy.css">
-    <script src="node_modules/js/bootstrap.js"></script>
+   <!--<link rel="stylesheet" href="../node_modules/css/bootstrap.css">-->
+    <link rel="stylesheet" href="aufaqu.css">
+    <!--<script src="../node_modules/js/bootstrap.js"></script>-->
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
     <title>Aufaq calculator</title>
 
     
@@ -25,22 +27,23 @@
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
-                    <a href="copy.html" class="nav-link active  d-md-none " id="hisab">Hisab</a>
+                    <a href="copy.html" class="nav-link d-md-none" id="hisab">Hisab</a>
                 </li>
                 <li class="list-item">
-                <a href="aufaqu.html" class="nav-link d-md-none" id="persia">persia</a>
+                <a href="aufaqu.html" class="nav-link d-md-none active" id="persia">persia</a>
                 </li>
                 <li class="list-item">
                     <a href="" class="nav-link">huruf</a>
                 </li>
-                <li class="list-item">
-                <a href="" class="nav-link">
-                    <hr class="bg-warning">
-                </a>
-                </li>
-                <li class="list-item">
-                <a href="" class="nav-link">setting</a>
-                </li>
+            <li class="list-item">
+            <a href="" class="nav-link">
+                <hr class="bg-warning">
+            </a>
+            </li>
+            <li class="list-item">
+            <a href="" class="nav-link">setting</a>
+            </li>
+            
             </ul>
         </div>
      </div>
@@ -118,7 +121,8 @@
    <div class="container-fluid bg-success "id='rg'>
    ,nb
    </div>
-
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
    
    <script>
        
@@ -135,9 +139,8 @@
     ر:200, ش:300, ت:700, ث:500, خ:600,
     ذ:700,ض:800, ظ:900, غ:1000
     }
-      //sample test 
-     //   ضصثقفغعهخحجشسيبلاتنمكطذءؤرىةوزظدآءأإٱ  
- var some = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹']
+       
+    var some = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹']
 
      function init()
      {
@@ -219,6 +222,7 @@
             
             } 
         } 
+        
  </script>
 </body>
 </html>
