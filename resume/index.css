@@ -12,7 +12,7 @@
         {
             
         display: grid;
-        height:35em;
+        height:38em;
         gap: 30px;
         grid-template:repeat(12,1fr) / repeat(12,1fr) ;
         grid-template-areas:
@@ -226,6 +226,7 @@
             color:brown
         }
         button {
+            border-radius: 10px;
             margin-top: 10px;
         }
         }
