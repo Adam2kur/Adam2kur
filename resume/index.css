@@ -71,12 +71,17 @@
             display: flex;
             column-gap: 20px;
         }
-        button
+        span.p{
+           grid-area:b ;
+        }
+        span.p button
         {
-            grid-area: b;
+            
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            height: 100%;
             border-radius: 10px;
             font-size: 18px;
             margin-top:10px;
@@ -215,7 +220,7 @@
         {
             padding: 5px;
             height: 50px;
-            
+            width: 60%;
             
         }
         input[type='number']
