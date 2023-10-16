@@ -199,6 +199,7 @@
         .block-2
         {
             grid-area: t;
+            margin-bottom: 10px;
         }
         .block-3
         {

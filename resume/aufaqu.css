@@ -204,6 +204,7 @@
         .block-3
         {
             grid-area: t;
+            margin-bottom: 10px;
         }
         .block-1
         {
